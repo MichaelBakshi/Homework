@@ -1,3 +1,14 @@
+2. //  printing declining numbers 
+
+        static void Main(string[] args)
+        {
+            int number = 200;
+            for (int i = number; i>=0; i--)
+            
+                Console.WriteLine(i);
+                
+                
+
 3. // input only 2 digit number, checks if tens what digit is bigger 
 
 static void Main(string[] args)
