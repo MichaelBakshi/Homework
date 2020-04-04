@@ -1,1 +1,36 @@
+// input only 2 digit number, checks if tens what digit is bigger 
 
+static void Main(string[] args)
+        {
+            while (true)
+            {
+                int a = 0;
+                int asarot = 0;
+                int ahadot = 0;
+
+                Console.WriteLine("Please enter a number");
+                int.TryParse(Console.ReadLine(), out a);
+
+                if (a >= 10 && a <= 99)
+                {
+                    ahadot = a % 10;
+                    Console.WriteLine(ahadot);
+                    asarot = a / 10;
+                    Console.WriteLine(asarot);
+                    if (asarot > ahadot)
+                    {
+                        Console.WriteLine("Asarot");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ahadot");
+                    }
+                }
+
+                else
+                {
+                    Console.WriteLine("Incorrect number");
+                    break;
+                }
+            }
+        }
