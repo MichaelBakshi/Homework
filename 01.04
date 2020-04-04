@@ -45,3 +45,53 @@ static void Main(string[] args)
                 }
             }
         }
+
+
+5. ///  shtarot:
+
+int sum = 0;
+            int mataim = 0;
+            int mea = 0;
+            int hamishim = 0;
+            int esrim = 0;
+            int eser = 0;
+            int hamesh = 0;
+            
+            do
+                Console.WriteLine("How much money you want to withdraw?");
+            while (int.TryParse(Console.ReadLine(), out sum) == false);
+
+            Console.WriteLine("Please receive : ");
+
+            
+                mataim = sum / 200;
+                    if (mataim ==0)
+                        {
+                            Console.Write("");
+                        }
+                    else
+                        { 
+                            Console.WriteLine(mataim + " x 200");
+                        }           
+
+                mea = (sum - mataim * 200) / 100;
+                    if (mea == 0)
+                        {
+                            Console.Write("");
+                        }
+                    else
+                        {
+                            Console.WriteLine(mea + " x 100");
+                        }
+
+                hamishim = (sum - mataim * 200 - mea * 100)/50;
+                    if (mea == 0)
+                         {
+                            Console.Write("");
+                         }
+                    else
+                        {
+                            Console.WriteLine(hamishim + " x 50");
+                        }
+                        
+                        
