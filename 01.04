@@ -1,4 +1,4 @@
-// input only 2 digit number, checks if tens what digit is bigger 
+3. // input only 2 digit number, checks if tens what digit is bigger 
 
 static void Main(string[] args)
         {
