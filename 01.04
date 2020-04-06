@@ -95,3 +95,26 @@ int sum = 0;
                         }
                         
                         
+3.////  סדרה מ 1 ועד המספר ובחזרה
+
+int number = 0;
+
+            do
+                Console.WriteLine("Please enter a number");
+            while (int.TryParse(Console.ReadLine(), out number) == false);
+
+           
+
+            for (int i=1; i<=number; i++)
+            {
+
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(j);
+                }
+                Console.WriteLine();
+
+            }
+            Console.WriteLine();
+            
+            
