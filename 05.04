@@ -33,4 +33,33 @@ int number = 0;
             }
             
             
-  //  
+  //  משחק ניחוש מספר
+  
+    Random random_engine = new Random(); // chinese -- only once !
+            int random_number = random_engine.Next(1, 101);
+            Console.WriteLine(random_number);
+
+
+            while (true) 
+            {
+                
+                Console.WriteLine("Please enter number in range (1-100):");
+                int number = Convert.ToInt32(Console.ReadLine());
+
+                if (number == random_number)
+                {
+                    Console.WriteLine("Correct answer!");
+                    break;
+                }
+
+                 if (number > random_number)
+                {
+                    Console.WriteLine("Go down");
+                }
+
+                 if (number < random_number)
+                {
+                    Console.WriteLine("Go up");
+                }
+            }
+
