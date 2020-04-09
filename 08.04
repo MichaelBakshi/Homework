@@ -1,0 +1,26 @@
+//  1.function that checks if the number is prime:
+
+
+while (true)
+            {
+
+                int number = Convert.ToInt32(Console.ReadLine());
+
+                int indexer = 2;
+                while (number % indexer != 0 && indexer < number)
+                {
+                    indexer++;
+                }
+
+                if (indexer == number)
+                {
+                    Console.WriteLine("Your number is a prime number");
+                }
+                else
+                {
+                    Console.WriteLine("Your number is not a prime number");
+                }
+            }
+
+        }
+
