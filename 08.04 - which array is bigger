@@ -1,3 +1,6 @@
+//  First option:
+
+
 namespace ConsoleApp23
 {
     class Program
@@ -39,6 +42,69 @@ namespace ConsoleApp23
             int[] array2 = { 2, 4, 9, 13, 17 };
             WhichArrayIsBigger(array1, array2);
 
+        }
+    }
+}
+
+
+//  2nd option:
+
+
+namespace ConsoleApp23
+{
+    class Program
+    {
+        private static int WhichArrayIsBigger(int[] arr1, int[] arr2)
+        {
+            int sumOfArray1 = 0;
+            int sumOfArray2 = 0;
+
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                sumOfArray1 += arr1[i];
+            }
+
+            for (int i = 0; i < arr2.Length; i++)
+            {
+                sumOfArray2 += arr2[i];
+            }
+
+            if (sumOfArray1 > sumOfArray2)
+            {
+                return 1;
+            }
+            else if (sumOfArray1 == sumOfArray2)
+            {
+                return 0;
+            }
+            else
+            {
+                return -1;
+            }
+
+
+        }
+
+        static void Main()
+        {
+            Console.WriteLine("Numbers in each array will be checked");
+
+            int[] array1 = { 2, 4, 9, 13, 17 };
+            int[] array2 = { 2, 4, 9, 13, 17 };
+            int result = WhichArrayIsBigger(array1, array2);
+
+            if (result == 1)
+            {
+                Console.WriteLine("arr 1 > arr2");
+            }
+            else if (result == 0)
+            {
+                Console.WriteLine("arr 1 == arr2");
+            }
+            else if(result == -1)
+            {
+                Console.WriteLine("arr 1 < arr2");
+            }
         }
     }
 }
