@@ -60,24 +60,7 @@ while (true)
  //  פונקציה שרצה על מערך ובודקת עבור כל מספר אם הוא ראשוני
  
  
-  static float Test1(int num, float f, int[] arr)
-        {
-            float sum = num + f + arr[0];
-
-            Console.WriteLine(sum);
-
-            return sum;
-        }
-
-        static float Test2()
-        {
-            float sum = 5f;
-
-            Console.WriteLine(sum);
-
-            return sum;
-        }
-
+  
         static void IsNumberPrime(int[] arr)
         {
             for (int i = 0; i < arr.Length; i++)
@@ -133,11 +116,6 @@ while (true)
             Console.WriteLine("Numbers in array will be checked");
             int[] arrayOfNumbers = { 2, 4, 9, 13, 17 };
             IsNumberPrime(arrayOfNumbers);
-
-            int num1 = 5;
-
-            float t = Test1(num1, 5.4f, arrayOfNumbers);
-            float t2 = Test2();
 
         }
         
