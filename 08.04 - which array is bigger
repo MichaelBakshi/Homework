@@ -1,8 +1,8 @@
-namespace ConsoleApp20
+namespace ConsoleApp23
 {
     class Program
     {
-        private static int WhichArrayIsBigger(int[] arr1, int[] arr2)
+        private static void WhichArrayIsBigger(int[] arr1, int[] arr2)
         {
             int sumOfArray1 = 0;
             int sumOfArray2 = 0;
@@ -37,7 +37,7 @@ namespace ConsoleApp20
 
             int[] array1 = { 2, 4, 9, 13, 17 };
             int[] array2 = { 2, 4, 9, 13, 17 };
-            WhichArrayIsBigger(array1, array2) ;
+            WhichArrayIsBigger(array1, array2);
 
         }
     }
