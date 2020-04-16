@@ -26,3 +26,33 @@ checking if rows and columns are valid:
             
             
             
+
+16 cards
+8 zugot
+11
+22
+33
+44
+55
+66
+77
+88
+
+
+0 0 0 0
+1 0 0 0
+0 0 0 0
+0 0 0 2
+
+run from 1 -> 8 (card)
+
+	put card - 1st time
+	find a random empty location
+	put card in this location
+
+	put card - 2nd time
+	find a random empty location
+	put card in this location
+   
+   
+   
