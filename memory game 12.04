@@ -11,3 +11,18 @@ checking if rows and columns are valid:
                     Console.WriteLine("Your choice is not valid, please reenter your number");
                     continue;
                 }
+
+
+// Readline of matrix size
+
+            int matrixSize = 4;
+            /*
+            do
+                Console.WriteLine("Please enter the even size of matrix you want to use (2-8)?");
+            while (int.TryParse(Console.ReadLine(), out matrixSize) == false || matrixSize <= 0 || matrixSize > 8 || matrixSize % 2 == 0);
+            */
+
+            int[,] matrix = new int[4, 4];
+            
+            
+            
