@@ -1,0 +1,13 @@
+checking if rows and columns are valid:
+
+   if (rowInFirstCard > matrixSize || rowInFirstCard <= 0)
+                {
+                    Console.WriteLine("Your choice is not valid, please reenter your number");
+                    continue;
+                }
+
+                if (columnInFirstCard > matrixSize || columnInFirstCard<=0)
+                {
+                    Console.WriteLine("Your choice is not valid, please reenter your number");
+                    continue;
+                }
