@@ -1,0 +1,26 @@
+class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Please enter number of students");
+            int sizeOfClass = Convert.ToInt32(Console.ReadLine());
+
+            int[] arrayOfClass = new int[sizeOfClass];
+
+            for (int i=0; i<arrayOfClass.Length; i++)
+            {
+                Console.WriteLine("Please enter grade");
+                arrayOfClass[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            double sumOfGrades = 0;
+            for (int i = 0; i < arrayOfClass.Length; i++)
+            {
+                sumOfGrades = sumOfGrades + arrayOfClass[i];
+            }
+            double average = sumOfGrades / sizeOfClass;
+
+            Console.WriteLine($"Total sum of grades is {sumOfGrades}");
+            Console.WriteLine($"The average grade in the class is {average}");
+        }
+    }
