@@ -67,3 +67,28 @@ run from 1 -> 8 (card)
 
 
 
+Console.WriteLine("Please choose coordinates in matrix for the second card (x,y), where x is row and y is column");
+
+                Console.WriteLine("Please enter number of row");
+
+                int rowInSecondCard = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Please enter number of column");
+                int columnInSecondCard = Convert.ToInt32(Console.ReadLine());
+
+                if (rowInSecondCard > matrixSize || rowInSecondCard <= 0)
+                {
+                    Console.WriteLine("Your choice is not valid, please reenter your number");
+                    continue;
+                }
+                if (columnInSecondCard > matrixSize || columnInSecondCard <= 0)
+                {
+                    Console.WriteLine("Your choice is not valid, please reenter your number");
+                    continue;
+                }
+
+                int secondCard = matrix[rowInSecondCard - 1, columnInSecondCard - 1];
+                if (secondCard == 0)
+                {
+                    Console.WriteLine("You already chose this card");
+                    continue;
+                }
