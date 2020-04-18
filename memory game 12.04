@@ -1,94 +1,189 @@
-checking if rows and columns are valid:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-   if (rowInFirstCard > matrixSize || rowInFirstCard <= 0)
-                {
-                    Console.WriteLine("Your choice is not valid, please reenter your number");
-                    continue;
-                }
-
-                if (columnInFirstCard > matrixSize || columnInFirstCard<=0)
-                {
-                    Console.WriteLine("Your choice is not valid, please reenter your number");
-                    continue;
-                }
-
-
-// Readline of matrix size
+namespace Memory_Game
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Readline of matrix size
 
             int matrixSize = 4;
-            /*
-            do
-                Console.WriteLine("Please enter the even size of matrix you want to use (2-8)?");
-            while (int.TryParse(Console.ReadLine(), out matrixSize) == false || matrixSize <= 0 || matrixSize > 8 || matrixSize % 2 == 0);
-            */
+
 
             int[,] matrix = new int[4, 4];
-            
-            
-            
 
-16 cards
-8 zugot
-11
-22
-33
-44
-55
-66
-77
-88
+            // Filling matrix with random numbers
+
+            int total_cards = 16;
+
+            int number_of_pairs = total_cards / 2;
+
+            Random generator = new Random();
 
 
-0 0 0 0
-1 0 0 0
-0 0 0 0
-0 0 0 2
+            // 1 2 3 4 5 6 7 8
+            for (int zug_number = 1; zug_number <= 8; zug_number++) // 1-8
+            {
 
-run from 1 -> 8 (card)
+                int random_row, random_col = 0;
 
-	put card - 1st time
-	find a random empty location
-	put card in this location
+                do
+                {
+                    // pick a random row
+                    random_row = generator.Next(0, 4); // 0-3
 
-	put card - 2nd time
-	find a random empty location
-	put card in this location
-   
-   
-   
+                    // pick as Random column
+                    random_col = generator.Next(0, 4); // 0-3
+
+                }
+                while (matrix[random_row, random_col] != 0); // while the random location contains a card -- if so do the loop it again
+
+                matrix[random_row, random_col] = zug_number;
+
+                // ---------------------------------------
+                // card 2
+                // ---------------------------------------
+                do
+                {
+                    // pick a random row
+                    random_row = generator.Next(0, 4); // 0-3
+
+                    // pick as Random column
+                    random_col = generator.Next(0, 4); // 0-3
+
+                } while (matrix[random_row, random_col] != 0); // while the random loication contains a card -- if so do the loop it again
+
+                // if reached here then it means the location is free (no card there)
+                // matrix[row, col] == 0
+                matrix[random_row, random_col] = zug_number;
+
+            }
+            Console.WriteLine("MEMORY GAME");
+            Console.WriteLine();
+
+            Console.WriteLine("step 2");
+
+            // printing matrix after random
+
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    matrix[i, j] = generator.Next(1, matrixSize * matrixSize / 2 + 1);
+                    Console.Write(matrix[i, j] + "\t");
                 }
+                Console.WriteLine();
 
             }
 
+            int score = 0;
+
+            do  // MAIN WHILE
+            {
 
 
-Console.WriteLine("Please choose coordinates in matrix for the second card (x,y), where x is row and y is column");
 
-                Console.WriteLine("Please enter number of row");
 
-                int rowInSecondCard = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Please enter number of column");
-                int columnInSecondCard = Convert.ToInt32(Console.ReadLine());
+                //receiving coordinates for 2 cards and comparing between them
+              
+                int rowInFirstCard = 0;
+                int columnInFirstCard = 0;
 
-                if (rowInSecondCard > matrixSize || rowInSecondCard <= 0)
+                
+                Console.WriteLine("Please choose coordinates in matrix for the first card (x,y), where x is row and y is column");
+
+                int firstCard = 0;
+                //do
+                //{
+                do
                 {
-                    Console.WriteLine("Your choice is not valid, please reenter your number");
-                    continue;
+                    Console.WriteLine("Please enter number of row (1-4)");
                 }
-                if (columnInSecondCard > matrixSize || columnInSecondCard <= 0)
-                {
-                    Console.WriteLine("Your choice is not valid, please reenter your number");
-                    continue;
-                }
+                while (int.TryParse(Console.ReadLine(), out rowInFirstCard) == false || rowInFirstCard > 4 || rowInFirstCard < 1);
 
-                int secondCard = matrix[rowInSecondCard - 1, columnInSecondCard - 1];
+                do
+                {
+                    Console.WriteLine("Please enter number of column (1-4)");
+                }
+                while (int.TryParse(Console.ReadLine(), out columnInFirstCard) == false || columnInFirstCard > 4 || columnInFirstCard < 1);
+
+
+                firstCard = matrix[rowInFirstCard - 1, columnInFirstCard - 1];
+                Console.WriteLine("The number is  " + firstCard);
+
+                if (firstCard == 0)
+                {
+                    Console.WriteLine("Card has already been guessed and removed from the board");
+                }
+                //}
+                //while (firstCard == 0);
+
+
+                Console.WriteLine("step 3");
+
+
+                int secondCard = 0;
+                int rowInSecondCard = 0;
+                int columnInSecondCard = 0;
+                //do
+                //{
+                Console.WriteLine("Please choose coordinates in matrix for the second card (x,y), where x is row and y is column");
+
+                do
+                {
+                    Console.WriteLine("Please enter number of row (1-4)");
+                }
+                while (int.TryParse(Console.ReadLine(), out rowInSecondCard) == false || rowInSecondCard > 4 || matrixSize < 1);
+
+                do
+                {
+                    Console.WriteLine("Please enter number of column (1-4)");
+                }
+                while (int.TryParse(Console.ReadLine(), out columnInSecondCard) == false || columnInSecondCard > 4 || matrixSize < 1);
+
+                secondCard = matrix[rowInSecondCard - 1, columnInSecondCard - 1];
+                Console.WriteLine("The number is  " + secondCard);
+
                 if (secondCard == 0)
                 {
-                    Console.WriteLine("You already chose this card");
-                    continue;
+                    Console.WriteLine("card already been guessed and removed from the board");
                 }
+                if (rowInFirstCard == rowInSecondCard && columnInFirstCard == columnInSecondCard)
+                {
+                    Console.WriteLine("This location was already guessed");
+                }
+                // }
+                // while (secondCard == 0 || (rowInFirstCard == rowInSecondCard && columnInFirstCard == columnInSecondCard));
+
+
+                Console.WriteLine("step 4");
+
+
+                // summing up score to end the game
+
+                if (firstCard == secondCard)
+                {
+                    score++;
+                    matrix[rowInSecondCard - 1, columnInSecondCard - 1] = 0;
+                    matrix[rowInFirstCard - 1, columnInFirstCard - 1] = 0;
+                    Console.WriteLine($"Correct! Your score is {score}");
+                }
+                else
+                {
+                    Console.WriteLine("Wrong guess. Please try again.");
+                }
+             
+                //Console.WriteLine("step 5");
+
+            } while (score < 8);
+
+
+            Console.WriteLine("You won the game!");
+
+        }   
+    }
+}
