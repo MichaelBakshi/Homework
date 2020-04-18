@@ -1,12 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace game_of_submarines
-{
-    class Program
+class Program
     {
         static void Main(string[] args)
         {
@@ -16,6 +8,8 @@ namespace game_of_submarines
             Console.WriteLine("Welcome to submarines game");
 
             int submarineCount = 0;
+            int tries = 0;
+
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
@@ -45,6 +39,7 @@ namespace game_of_submarines
 
             do
             {
+                tries++;
 
                 do
                     Console.WriteLine("Please enter number for the row");
@@ -70,7 +65,6 @@ namespace game_of_submarines
 
             }
             while (boom < submarineCount);
-            Console.WriteLine("You won!");
+            Console.WriteLine($"You won! Within {tries} tries only!");
         }
     }
-}
