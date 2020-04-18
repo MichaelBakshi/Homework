@@ -1,0 +1,76 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace game_of_submarines
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] matrix = new int[3, 3];
+            Random generator = new Random();
+
+            Console.WriteLine("Welcome to submarines game");
+
+            int submarineCount = 0;
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    matrix[i, j] = generator.Next(0, 2);
+                    if (matrix[i, j] == 1)
+                    {
+                        submarineCount++;
+                    }
+                }
+            }
+            Console.WriteLine($"Number of submarines is {submarineCount}");
+
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    Console.Write(matrix[i, j] + "\t");
+                }
+                Console.WriteLine();
+            }
+
+            int rowNumber = 0;
+            int columnNumber = 0;
+            int boom = 0;
+
+
+            do
+            {
+
+                do
+                    Console.WriteLine("Please enter number for the row");
+                while (int.TryParse(Console.ReadLine(), out rowNumber) == false || rowNumber > 3 || rowNumber < 1);
+
+                do
+                    Console.WriteLine("Please enter number for the column");
+                while (int.TryParse(Console.ReadLine(), out columnNumber) == false || columnNumber > 3 || columnNumber < 1);
+
+                int fire = matrix[rowNumber - 1, columnNumber - 1];
+
+
+                if (fire == 1)
+                {
+                    Console.WriteLine("Boom!");
+                    fire = 0;
+                    boom++;
+                }
+                else if (fire == 0)
+                {
+                    Console.WriteLine("Miss");
+                }
+
+            }
+            while (boom < submarineCount);
+            Console.WriteLine("You won!");
+        }
+    }
+}
