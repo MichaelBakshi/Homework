@@ -1,0 +1,32 @@
+class Program
+    {
+        static bool aDividedByB (int a, int b)
+        {
+           
+
+            if (a%b == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+        }
+
+
+        static void Main(string[] args)
+        {
+
+            if (aDividedByB(10, 5) == true)
+            {
+                Console.WriteLine("No module");   
+            }
+            else
+            {
+                Console.WriteLine("Some module");
+            }
+        }
+    }
