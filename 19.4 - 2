@@ -1,0 +1,20 @@
+class Program
+    {
+        static void AbMultiply (ref int a, ref int b)
+        {
+            a += 1; // => a = a+1
+            b *= 2; // => b = b*2
+      
+        }
+
+
+        static void Main(string[] args)
+        {
+            int a = 2;
+            int b = 3;
+
+            AbMultiply(ref a,ref b);
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+        }
+    }
