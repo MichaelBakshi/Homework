@@ -1,32 +1,30 @@
-static double ShumAhezka (params int [] numbers)
-        {
-            double sum = 0;
+class Program
+    {
 
+        static int ShumAhezka(params int[] numbers)
+        {
+            int powSum = 0;
+            int power=1;
             for (int i = 0; i < numbers.Length; i++)
             {
-                //sum += Math.Pow(numbers[i], i+1);
-
-                //numbers[i] * numbers[i] * hezka;
-                int hezka = i+1;
-                int number = numbers[i];
-                int powSum = 0;
-
-                for (int n = 1; n <= hezka; n++)
+              
+                int current=1;
+                for (int n = power; n !=0; n--)
                 {
-                    powSum += number * number;
+                   current *= numbers[i];
+                   
                 }
-
-                int sum = 
-                //numbers [i] = i * numbers[i]*numbers[i];
+                   powSum += current;
+                   power++;
             }
 
-            return sum;
+            return powSum;
         }
 
 
         static void Main(string[] args)
         {
-
-            Console.WriteLine(  ShumAhezka(2, 3));
+            Console.WriteLine(ShumAhezka(2, 3,4));
+            Console.ReadLine();
         }
     }
