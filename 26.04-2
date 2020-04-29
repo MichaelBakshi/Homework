@@ -1,0 +1,34 @@
+namespace WindowsFormsApp3
+{
+    public partial class Homework : Form
+    {
+       
+        public Homework()
+        {
+            InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRandom_Click(object sender, EventArgs e)
+        {
+
+            Random generator = new Random();
+            int randomNumber = generator.Next(int.Parse(txtLower.Text), int.Parse(txtUpper.Text)+1);
+            lblRandom.Text = randomNumber+"";
+        }
+
+        private void txtUpper_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLower_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
