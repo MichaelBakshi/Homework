@@ -1,0 +1,37 @@
+namespace WindowsFormsApp3
+{
+    public partial class Homework : Form
+    {
+       
+        public Homework()
+        {
+            InitializeComponent();
+        }
+
+        
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRandom_Click(object sender, EventArgs e)
+        {
+
+            Random generator = new Random();
+            int randomNumber = generator.Next(int.Parse(txtLower.Text), int.Parse(txtUpper.Text)+1);
+            lblRandom.Text = randomNumber+"";
+
+            Debug.WriteLine($"The random number is {randomNumber}");
+            Debug.WriteLine($"The upper bound is {txtUpper.Text}");
+            Debug.WriteLine($"The lower bound is {txtLower.Text}");
+        }
+
+        private void btnZerofy_Click(object sender, EventArgs e)
+        {
+            txtUpper.Text = Convert.ToString(0);
+            txtLower.Text = Convert.ToString(0);
+
+        }
+    }
+}
