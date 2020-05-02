@@ -58,7 +58,7 @@ namespace WindowsFormsApp3
 
         private void txtLower_TextChanged(object sender, EventArgs e)
         {
-            if (txtLower.Text == "Enter upper border")
+            if (txtLower.Text == "Enter lower border")
             {
                 txtLower.Text = string.Empty;
             }
