@@ -1,0 +1,63 @@
+public partial class calculatorForm : Form
+    {
+        double result = 0;
+
+        public calculatorForm()
+        {
+            InitializeComponent();
+        }
+
+        private void PlusBtn_Click(object sender, EventArgs e)
+        {
+            resultListBox.Items.Clear();
+            result = Convert.ToDouble(firstNumberTxt.Text) + Convert.ToDouble(secondNumberTxt.Text);
+            resultListBox.Items.Add(result);
+       
+        }
+
+        private void minusBtn_Click(object sender, EventArgs e)
+        {
+            resultListBox.Items.Clear();
+            result = Convert.ToDouble(firstNumberTxt.Text) - Convert.ToDouble(secondNumberTxt.Text);
+            resultListBox.Items.Add(result);
+
+        }
+       
+
+        private void multiplyBtn_Click(object sender, EventArgs e)
+        {
+            resultListBox.Items.Clear();
+            result = Convert.ToDouble(firstNumberTxt.Text) * Convert.ToDouble(secondNumberTxt.Text);
+            resultListBox.Items.Add(result);
+
+        }
+
+        private void divideBtn_Click(object sender, EventArgs e)
+        {
+            resultListBox.Items.Clear();
+            result = Convert.ToDouble(firstNumberTxt.Text) / Convert.ToDouble(secondNumberTxt.Text);
+            resultListBox.Items.Add(result);
+
+        }
+       
+
+        private void rootBtn_Click(object sender, EventArgs e)
+        {
+            resultListBox.Items.Clear();
+            result = Math.Pow(Convert.ToDouble(firstNumberTxt.Text), 1.0 / Convert.ToDouble(secondNumberTxt.Text));
+            resultListBox.Items.Add(result);
+
+        }
+
+        private void powerBtn_Click_2(object sender, EventArgs e)
+        {
+            resultListBox.Items.Clear();
+            result = Math.Pow(Convert.ToDouble(firstNumberTxt.Text), Convert.ToDouble(secondNumberTxt.Text));
+            resultListBox.Items.Add(result);
+        }
+
+        private void resultListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
